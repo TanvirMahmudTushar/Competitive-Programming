@@ -1,0 +1,16 @@
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    ops = []
+
+    # First pass: reverse subarray from 1 to i for i = 2 to n
+    for i in range(2, n + 1):
+        ops.append((i, 1, i))
+
+    # Second pass: repeat to ensure permutation
+    for i in range(2, n + 1):
+        ops.append((i, 1, i))
+
+    print(len(ops))
+    for op in ops:
+        print(op[0], op[1], op[2])
